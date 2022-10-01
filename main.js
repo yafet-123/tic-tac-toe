@@ -15,6 +15,7 @@ gameView.onTileClick = function (i){
 // we say onRestartClick is when we touch the restart button this is the same with the above button
 gameView.onRestartClick = function(){
     game = new Game();
+    // whn we touche the restart button it will make restart and make new
     gameView.update(game)
 }
 

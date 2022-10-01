@@ -3,13 +3,14 @@ export default class Game {
     constructor() {
         this.newGame();
     }
-
+    // this is the initial data that we need and this is call when we touch the restart button 
     newGame(){
         this.turn = "X"; // the first move is x
-        this.board = new Array(9).fill(null);
-        this.winner = null;
+        this.board = new Array(9).fill(null); // the box are 9
+        this.winner = null; // winner at the initial is null
     }
-
+    
+    // it make the next turn if it is x it will make o and the other
     nextTurn() {
         if(this.turn === "X"){
             this.turn = "O" 
@@ -22,12 +23,16 @@ export default class Game {
         if(!this.isInProgress()){
             return;
         }
+        
 
         if(this.board[i]){
             return;
         }
+        // if there board goes to the next move
         this.board[i] = this.turn;
         let winningCombination = this.findWinningCombination()
+        // if winningCombination is null it goes to next move 
+        // in the if we put ! because if !null became true if not it will make winner make the winner combination
         if(!winningCombination){
             this.nextTurn();
         } else {
@@ -37,6 +42,7 @@ export default class Game {
     }
 
     findWinningCombination(){
+        // in this the winning commbination
         const winningCombinations = [
             [0,1,2],
             [3,4,5],
@@ -65,7 +71,6 @@ export default class Game {
             return false;
         }
     }
-
 }
 
 
