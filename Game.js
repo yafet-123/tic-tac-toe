@@ -5,7 +5,7 @@ export default class Game {
     }
 
     newGame(){
-        this.turn = "X";
+        this.turn = "X"; // the first move is x
         this.board = new Array(9).fill(null);
         this.winner = null;
     }

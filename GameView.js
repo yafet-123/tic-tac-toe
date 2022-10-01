@@ -1,5 +1,6 @@
 export default class GameView {
     constructor(root){
+        // adding html button in the root div as you know we call the div in the main.js
         this.root = root;
         this.root.innerHTML = `
             <div class="header">
@@ -30,10 +31,15 @@ export default class GameView {
                 this.onTileClick(tile.dataset.index);
             })
         })
+        // when we see in main.css we say onTileClick(i) in the above code it loop the div and take the border-title
+        // that are div that div take box add click function that function take onTileClick take the number
 
         this.root.querySelector(".header-restart").addEventListener("click", ()=>{
             this.onRestartClick();
         })
+
+         // in the onRestartClick() and added click function
+        
     }
 
 
