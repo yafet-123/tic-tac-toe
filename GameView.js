@@ -52,7 +52,7 @@ export default class GameView {
     updateTurn(game){
         this.root.querySelector(".header-turn").textContent = `${game.turn}'s turn`
     }
-
+    
     updateStatus(game){
         let status = "In Progress";
         if(game.findWinningCombination()){
